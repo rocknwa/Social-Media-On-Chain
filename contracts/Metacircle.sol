@@ -5,8 +5,7 @@ contract Metacircle {
 
     // Struct to represent a User
     struct User {
-        //  ASSIGNMENT #1
-        YOUR_CODE_GOES_HERE userAddress;
+        address userAddress;
         string username;
         string bio;
     }
@@ -16,8 +15,7 @@ contract Metacircle {
         uint postId;
         address author;
         string content;
-        //  ASSIGNMENT #2
-        YOUR_CODE_GOES_HERE likes;
+        uint likes;
         mapping(address => bool) likedBy; // Mapping to track which users have liked the post
         uint[] commentIds;  // Array to store comment IDs associated with the post
     }
@@ -27,19 +25,16 @@ contract Metacircle {
         uint commentId;
         string authorUsername; // Store the username of the commenter
         uint postId;
-        //  ASSIGNMENT #3
-        YOUR_CODE_GOES_HERE content;
+        string content;
     }
 
     // Mappings to store users, posts, and comments
     mapping(address => User) public users;
-    //  ASSIGNMENT #4
-    mapping(uint => YOUR_CODE_GOES_HERE) public posts;
+    mapping(uint => Post) public posts;
     mapping(uint => Comment) public comments;
 
     // Counters for posts and comments
     uint public postCount;
-    //  ASSIGNMENT #5
-    uint YOUR_CODE_GOES_HERE commentCount;
+    uint public commentCount;
 
 }
