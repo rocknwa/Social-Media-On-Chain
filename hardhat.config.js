@@ -12,6 +12,9 @@ module.exports = {
     core_testnet: {
       url: "https://rpc.test.btcs.network",
       accounts: privateKey(),
+      gasPrice: "auto", // 1 gwei
+      maxFeePerGas: 2000000000, // 2 gwei
+      maxPriorityFeePerGas: 1000000000, // 1 gwei (tip)
     },
   },
   solidity: {
@@ -25,6 +28,18 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: process.env.API_KEY,
+    apiKey: {
+      "core_testnet": "123"
+    },
+    customChains: [
+      {
+        network: "core_testnet",
+        chainId: 1115,
+        apiURL: "https://scan.test.btcs.network/api",
+      }
+    ]
+  },
+  sourcify: {
+    enabled: false
   },
 };
